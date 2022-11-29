@@ -1,0 +1,46 @@
+@font-face {
+  font-family: yekanbakh;
+  font-style: normal;
+  font-weight: 200;
+  src: url("YekanBakh/YekanBakhThin.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: yekanbakh;
+  font-style: normal;
+  font-weight: 300;
+  src: url("YekanBakh/YekanBakhRegular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: yekanbakh;
+  font-style: normal;
+  font-weight: 500;
+  src: url("YekanBakh/YekanBakhMedium.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: yekanbakh;
+  font-style: normal;
+  font-weight: 600;
+  src: url("YekanBakh/YekanBakhBold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: yekanbakh;
+  font-style: normal;
+  font-weight: 800;
+  src: url("YekanBakh/YekanBakhHeavy.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: yekanbakh;
+  font-style: normal;
+  font-weight: 900;
+  src: url("YekanBakh/YekanBakhFat.ttf") format('truetype');
+}
+
+body {
+  font-family: yekanbakh, sans-serif;
+  background-color: #F5F5F5;
+}

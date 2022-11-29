@@ -1,0 +1,84 @@
+@import "./src/modals/colors";
+
+.TopBar {
+  margin-top: 10px;
+  border-radius: 15px;
+  margin-bottom: 200px;
+  background-color: var(--white);
+  box-shadow: 0 6px 60px rgba(43, 45, 66, 0.05);
+  padding: 15px 5px;
+
+  .Logo {
+    width: 170px;
+  }
+
+  .Menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-link {
+    padding: 2px 14px;
+    font-weight: 300;
+  }
+
+  .nav-link.active {
+    font-weight: 800;
+  }
+
+  .Search-Box {
+    width: 52px;
+    height: 52px;
+    background-color: rgba(43, 45, 66, 0.05);
+    border-radius: 6px;
+    outline: none;
+    border: none;
+  }
+
+  .Search-Input {
+    border-radius: 0 50px 50px 0;
+    transition: all ease 0.7s;
+    border: 1px solid var(--black);
+    border-left: none;
+  }
+
+  .Search-Input:focus {
+    box-shadow: none;
+    border: 1px solid var(--black);
+    border-left: none;
+    transition: all ease 0.7s;
+  }
+
+  .Search-BTN {
+    outline: none;
+    background-color: rgba(43, 45, 66, 0.05);
+    transition: all ease 0.7s;
+    padding: 5px 9px 5px 5px;
+    border-radius: 100% 0 0 100%;
+    border: 1px solid var(--black);
+    border-right: none;
+  }
+}
+
+.D-Mobile-Show {
+  display: none;
+}
+
+.D-Mobile-Flex {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .D-Mobile-None {
+    display: none !important;
+  }
+
+  .D-Mobile-Show {
+    display: block !important;
+  }
+
+  .D-Mobile-Flex {
+    display: flex !important;
+  }
+}

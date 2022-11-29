@@ -1,0 +1,21 @@
+@import "./src/modals/colors";
+
+.Property-Card {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 50px;
+  box-shadow: 0 15px 50px rgba(43, 45, 66, 0.05);
+
+  h1 {
+    font-weight: 900;
+    font-size: 50px;
+  }
+
+  h3 {
+    font-weight: 800;
+  }
+
+  p {
+    font-weight: 200;
+  }
+}

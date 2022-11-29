@@ -1,0 +1,28 @@
+:root {
+  --primary: #EF233C;
+  --primary-75: rgba(239, 35, 60, 0.75);
+  --primary-50: rgba(239, 35, 60, 0.5);
+  --primary-25: rgba(239, 35, 60, 0.25);
+  --primary-1 : rgba(239, 35, 60, 0.1);
+  --primary-05: rgba(239, 35, 60, 0.05);
+
+  --black: #2B2D42;
+  --black-75: rgba(43, 45, 66, 0.75);
+  --black-50: rgba(43, 45, 66, 0.5);
+  --black-25: rgba(43, 45, 66, 0.25);
+  --black-1: rgba(43, 45, 66, 0.1);
+  --black-05: rgba(43, 45, 66, 0.05);
+
+  --white: #FFF;
+  --white-75: rgba(255, 255, 255, 0.75);
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-25: rgba(255, 255, 255, 0.25);
+  --white-1 : rgba(255, 255, 255, 0.1);
+  --white-05: rgba(255, 255, 255, 0.05);
+
+  --primary-shadow: 0px 8px 15px rgba(239, 35, 60, 0.25);
+
+  .red-text {
+    color: var(--primary);
+  }
+}

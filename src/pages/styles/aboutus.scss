@@ -1,0 +1,55 @@
+@import "./src/modals/colors";
+
+.About-Us {
+  h4 {
+    font-weight: 700;
+  }
+
+  p {
+    line-height: 2;
+    font-weight: 200;
+    margin-top: -7px;
+  }
+
+  .Team-Member {
+    background-color: var(--white);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-top: 100px;
+
+    h3 {
+      font-weight: 800;
+    }
+  }
+
+  .Comments {
+    padding-top: 100px;
+
+    h3 {
+      font-weight: 800;
+    }
+
+    .Arrow {
+      cursor: pointer;
+    }
+  }
+
+  .Counter {
+    .circle {
+      border-radius: 100%;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(239, 35, 60, 0.25);;
+      margin-right: 7px;
+    }
+
+    .wide {
+      width: 33px;
+      height: 10px;
+      background: var(--primary);
+      box-shadow: 0 4px 10px rgba(237, 13, 127, 0.25);
+      border-radius: 50px;
+      margin-right: 7px;
+    }
+  }
+}

@@ -2,11 +2,17 @@ import "../styles/aboutus.scss";
 import PropertyCard, {IPropertyCard} from "../../ui/propertycard/propertycard";
 import Indicator from "../../ui/indicator/indicator";
 import MemberCard, {IMemberCard} from "../../ui/membercard/membercard";
+import CommentCard, {ICommentCard} from "../../ui/commentcard/commentcard";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import CommentCard, {ICommentCard} from "../../ui/commentcard/commentcard";
+import Slider from "../../ui/slider/slider";
+import {useRef} from "react";
+import {SwiperRef} from "swiper/react";
 
 const AboutUs = () => {
+
+    const sliderRef = useRef<SwiperRef>(null);
+
     const propertyItems: IPropertyCard[] = [
         {
             header: "167",
@@ -55,8 +61,45 @@ const AboutUs = () => {
             name: "علی رضایی",
             time: "دو هفته پیش",
             comment: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد"
-        }
+        },
+        {
+            img: require("../../assets/images/Avatar2.png"),
+            name: "محمد قربانی",
+            time: "دو هفته پیش",
+            comment: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد"
+        },
+        {
+            img: require("../../assets/images/Avatar1.png"),
+            name: "علی رضایی",
+            time: "دو هفته پیش",
+            comment: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد"
+        },
+        {
+            img: require("../../assets/images/Avatar2.png"),
+            name: "محمد قربانی",
+            time: "دو هفته پیش",
+            comment: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد"
+        },
+        {
+            img: require("../../assets/images/Avatar1.png"),
+            name: "علی رضایی",
+            time: "دو هفته پیش",
+            comment: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد"
+        },
     ]
+
+    let allCommentItems: JSX.Element[] = [];
+    const renderCommentItems = (comments:ICommentCard[]): JSX.Element[] => {
+        comments.map((comment, index) => {
+            allCommentItems.push(
+                <CommentCard key={index} img={comment.img} name={comment.name} time={comment.time}
+                             comment={comment.comment}/>
+            )
+            return;
+        })
+        return allCommentItems;
+    }
+
     return (
         <div className="About-Us">
             <div className="container">
@@ -103,38 +146,28 @@ const AboutUs = () => {
             </div>
             <div className="Comments">
                 <div className="container">
-                    <div className="d-flex justify-content-between align-items-center">
+                    <div className="container d-flex justify-content-between align-items-center">
                         <div className="d-flex justify-content-start">
                             <Indicator/>
                             <h3><span className="red-text">نظرات</span> مشتریان ما</h3>
                         </div>
                         <div className="d-flex justify-content-center align-items-center">
-                            <div className="Arrow">
+                            <div onClick={() => {
+                                sliderRef?.current?.swiper.slidePrev();
+                            }} className="Arrow">
                                 <ArrowForwardIosIcon/>
                             </div>
-                            <div className="Arrow">
+                            <div onClick={() => {
+                                sliderRef?.current?.swiper.slideNext()
+                            }} className="Arrow">
                                 <ArrowBackIosIcon/>
                             </div>
                         </div>
                     </div>
-                    <div className="row mt-5">
-                        {
-                            commentItems.map((item, index) => {
-                                return <CommentCard key={index} img={item.img} name={item.name} time={item.time}
-                                                    comment={item.comment}/>
-                            })
-                        }
+                    <div className="container mt-5">
+                        <Slider sliderItems={renderCommentItems(commentItems)} desktopCount={2} tabletCount={1} mobileCount={1} reference={sliderRef}/>
                     </div>
                 </div>
-            </div>
-            <div className="Counter mt-3 d-flex justify-content-center align-items-center">
-                <div className="circle"></div>
-                <div className="circle"></div>
-                <div className="circle"></div>
-                <div className="wide"></div>
-                <div className="circle"></div>
-                <div className="circle"></div>
-                <div className="circle"></div>
             </div>
         </div>
     );
